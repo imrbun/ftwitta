@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Mon Apr 14 2025 08:56:47 GMT+0000 (Coordinated Universal Time) -->
-<html data-wf-domain="athletic-wcopilot.webflow.io" data-wf-page="67d3e78113168635558f714d"
-    data-wf-site="67d3e78113168635558f70d0" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
-    <title>FENG TIANWEI International Table Tennis Academy</title>
+    <title>My Account - FENG TIANWEI International Table Tennis Academy</title>
     <meta content="FENG TIANWEI International Table Tennis Academy" property="og:title" />
     <meta content="FENG TIANWEI International Table Tennis Academy" property="twitter:title" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta content="Webflow" name="generator" />
     <link href="css/main.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
@@ -17,15 +14,769 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script
         type="text/javascript">WebFont.load({ google: { families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic", "Inter:regular,500,600,700"] } });</script>
-    <script
-        type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
     <link href="images/logo.png" rel="shortcut icon" type="image/x-icon" />
     <link href="images/logo.png" rel="apple-touch-icon" />
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-VG9W6BRS4E"></script>
-    <script
-        type="text/javascript">window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('set', 'developer_id.dZGVlNj', true); gtag('js', new Date()); gtag('config', 'G-VG9W6BRS4E');</script>
-    <script
-        type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = { "currencyCode": "USD", "symbol": "$", "decimal": ".", "fractionDigits": 2, "group": ",", "template": "{{wf {\"path\":\"symbol\",\"type\":\"PlainText\"} }} {{wf {\"path\":\"amount\",\"type\":\"CommercePrice\"} }} {{wf {\"path\":\"currencyCode\",\"type\":\"PlainText\"} }}", "hideDecimalForWholeNumbers": false };</script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #1a4d3e;
+            --light-green: #a8d5ba;
+            --accent-yellow: #f4c430;
+            --accent-red: #c1272d;
+            --text-dark: #333;
+            --text-light: #666;
+            --border-color: #e0e0e0;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Lato', 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--bg-light);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            max-height: 35px;
+            width: auto;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .header-nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .header-nav a:hover {
+            color: var(--light-green);
+        }
+
+        .header-nav .primary-button {
+            background: var(--white);
+            color: var(--primary-green);
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .header-nav .primary-button:hover {
+            background: var(--light-green);
+            color: var(--primary-green);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ===== MAIN LAYOUT ===== */
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+            min-height: calc(100vh - 200px);
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            width: 280px;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar h3 {
+            color: var(--primary-green);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar-menu a:hover {
+            background: var(--bg-light);
+            color: var(--primary-green);
+        }
+
+        .sidebar-menu a.active {
+            background: var(--light-green);
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+
+        .sidebar-menu i {
+            font-size: 1.3rem;
+            width: 30px;
+            text-align: center;
+            color: var(--primary-green);
+        }
+
+        /* ===== CONTENT AREA ===== */
+        .content {
+            flex: 1;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .content-section {
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            color: var(--primary-green);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title i {
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        /* ===== PROFILE SECTION ===== */
+        .profile-card {
+            background: linear-gradient(135deg, var(--primary-green) 0%, #2a5f50 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            background: var(--light-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--primary-green);
+        }
+
+        .profile-info h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-info p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .profile-meta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .meta-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* ===== FORM SECTIONS ===== */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(26, 77, 62, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        /* ===== BOOKINGS SECTION ===== */
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            background: none;
+            border: none;
+            padding: 1rem 1.5rem;
+            color: var(--text-light);
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+        }
+
+        .tab:hover {
+            color: var(--primary-green);
+        }
+
+        .tab.active {
+            color: var(--primary-green);
+            border-bottom-color: var(--primary-green);
+        }
+
+        .booking-card {
+            background: linear-gradient(135deg, #f9f9f9 0%, var(--white) 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-green);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .booking-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .booking-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .booking-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .booking-badge.confirmed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .booking-badge.pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .booking-badge.cancelled {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .booking-title {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .booking-venue {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .booking-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .detail-item i {
+            color: var(--primary-green);
+            width: 20px;
+        }
+
+        .booking-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .booking-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .booking-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        /* ===== MEMBERSHIP SECTION ===== */
+        .membership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .membership-card {
+            background: var(--white);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .membership-card:hover {
+            border-color: var(--primary-green);
+            box-shadow: 0 8px 20px rgba(26, 77, 62, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .membership-card.popular {
+            border-color: var(--accent-yellow);
+            background: linear-gradient(135deg, rgba(244, 196, 48, 0.05) 0%, var(--white) 100%);
+            transform: scale(1.05);
+        }
+
+        .membership-badge {
+            display: inline-block;
+            background: var(--accent-yellow);
+            color: var(--primary-green);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .membership-name {
+            color: var(--primary-green);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .membership-price {
+            font-size: 2.5rem;
+            color: var(--accent-yellow);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .membership-price span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .membership-features {
+            list-style: none;
+            text-align: left;
+            margin: 1.5rem 0;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .membership-features li {
+            padding: 0.7rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .membership-features i {
+            color: var(--primary-green);
+            width: 20px;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #0f3a2f;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 77, 62, 0.2);
+        }
+
+        .btn-secondary {
+            background: var(--light-green);
+            color: var(--primary-green);
+            border: 2px solid var(--primary-green);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        .btn-warning {
+            background: var(--accent-yellow);
+            color: var(--primary-green);
+        }
+
+        .btn-warning:hover {
+            background: #e0b320;
+        }
+
+        .btn-danger {
+            background: var(--accent-red);
+            color: var(--white);
+        }
+
+        .btn-danger:hover {
+            background: #a01f24;
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+        }
+
+        .btn-full {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* ===== EMPTY STATE ===== */
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            color: var(--light-green);
+            margin-bottom: 1rem;
+        }
+
+        .empty-state h3 {
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .empty-state p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-content a {
+            color: var(--light-green);
+            text-decoration: none;
+        }
+
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .sidebar {
+                width: auto;
+                padding: 1.5rem;
+                position: static;
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+
+            .sidebar.mobile-open {
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 200;
+                background: var(--white);
+                border-radius: 0;
+                overflow-y: auto;
+                padding-top: 4rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .content {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-details {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .membership-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .membership-card.popular {
+                transform: scale(1);
+            }
+
+            .header-nav {
+                gap: 0.5rem;
+            }
+
+            .header-nav a {
+                display: none;
+            }
+
+            .tabs {
+                gap: 0.2rem;
+            }
+
+            .tab {
+                padding: 0.75rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 1rem;
+            }
+
+            .header-container {
+                gap: 1rem;
+            }
+
+            .content {
+                padding: 1rem;
+                border-radius: 8px;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .sidebar.mobile-open {
+                padding-top: 3rem;
+            }
+
+            .profile-avatar {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+
+            .membership-price {
+                font-size: 2rem;
+            }
+
+            .booking-card {
+                padding: 1rem;
+            }
+
+            .detail-item {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -82,6 +833,7 @@
             </div>
         </div>
     </div>
+
     <section class="dashboard-banner-section">
         <div class="w-layout-blockcontainer base-container w-container">
             <div class="dashboard-banner">
@@ -90,213 +842,401 @@
                     class="text-white">
                     Hello, <span class="bold-text-span">Eugene</span>
                 </h1>
-                <div class="home-1-banner-grid">
-                    <div data-w-id="b38b4d4e-dbf1-77de-a0f1-3e1b1ac26699" style="opacity:0"
-                        class="home-1-banner-testimonials">
-                        <div class="home-1-banner-testimonials-text-block"><span class="primary-color-span">0</span>
-                            Bookings made</div>
-                    </div>
-                    <div data-w-id="b38b4d4e-dbf1-77de-a0f1-3e1b1ac26699" style="opacity:0"
-                        class="home-1-banner-testimonials">
-                        <div class="home-1-banner-testimonials-text-block">Basic membership</div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="section home-1-gray-bg">
-        <div class="w-layout-blockcontainer base-container w-container">
-            <div class="title-wrapper">
-                <div data-w-id="0a1ac20c-7db5-5759-7997-f2873c8104f5"
-                    style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                    class="home-1-testimonials-title">
-                    <h2><span class="bold-text-span">My Bookings</p>
-                </div>
-            </div>
-
-            <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100"
-                class="membership-tabs w-tabs" style="align-items:start;margin-top:0px;">
-                <div data-w-id="b5009c4a-57db-3eb3-0e4c-60825aea8ba6"
-                    style="max-width:fit-content;opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                    class="membership-tabs-menu w-tab-menu" role="tablist">
-                    <a data-w-tab="Tab 1" class="membership-tab-link w-inline-block w-tab-link w--current"
-                        id="w-tabs-0-data-w-tab-0" href="#w-tabs-0-data-w-pane-0" role="tab"
-                        aria-controls="w-tabs-0-data-w-pane-0" aria-selected="true">
-                        <div>All</div>
-                    </a>
-                    <a data-w-tab="Tab 2" class="membership-tab-link w-inline-block w-tab-link" tabindex="-1"
-                        id="w-tabs-0-data-w-tab-1" href="#w-tabs-0-data-w-pane-1" role="tab"
-                        aria-controls="w-tabs-0-data-w-pane-1" aria-selected="false">
-                        <div>Pending</div>
-                    </a>
-                    <a data-w-tab="Tab 3" class="membership-tab-link w-inline-block w-tab-link" tabindex="-1"
-                        id="w-tabs-0-data-w-tab-2" href="#w-tabs-0-data-w-pane-2" role="tab"
-                        aria-controls="w-tabs-0-data-w-pane-1" aria-selected="false">
-                        <div>Confirmed</div>
-                    </a>
-                    <a data-w-tab="Tab 4" class="membership-tab-link w-inline-block w-tab-link" tabindex="-1"
-                        id="w-tabs-0-data-w-tab-3" href="#w-tabs-0-data-w-pane-3" role="tab"
-                        aria-controls="w-tabs-0-data-w-pane-1" aria-selected="false">
-                        <div>Cancelled</div>
-                    </a>
-                </div>
-                <div class="membership-tabs-content w-tab-content">
-                    <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active" id="w-tabs-0-data-w-pane-0" role="tabpanel"
-                        aria-labelledby="w-tabs-0-data-w-tab-0">
-                        <div class="w-dyn-list">
-                            <div role="list" class="blog-collection-list w-dyn-items">
-                                <div data-w-id="aef4520c-d073-d10e-746f-38ff46f01e67"
-                                    style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                                    role="listitem" class="blog-collection-item w-dyn-item">
-                                    <div class="blog-card-text-wrap">
-                                        <div class="blog-card-label">
-                                            <div class="label">BOOKING ID #377</div>
-                                        </div>
-                                        <a href="#" class="card-text-link">Table
-                                            Tennis Venue 1
-                                        </a>
-                                        <p>137 Sunset Wy, #03-05, Singapore 597159</p>
-                                        <p><i class="fa-regular fa-calendar primary-color-span"></i> <strong>28 October
-                                                2026,
-                                                Wednesday</strong></p>
-                                        <p><i class="fa-regular fa-clock primary-color-span"></i> <strong>12:00 PM -
-                                                2:00 PM (2
-                                                Hours)</strong></p>
-                                        <div class="price-flex" style="margin-top:20px;">
-                                            <span style="font-size:22px;"
-                                                class="primary-color-span"><strong>CONFIRMED</strong></span>
-                                            <span style="font-size:22px;" class="primary-color-span"><strong>SGD
-                                                    32.00</strong></span>
-                                        </div>
-                                        <a href="#" class="primary-button full-width-mobile w-button">View Details</a>
-                                    </div>
-                                </div>
-                                <div data-w-id="aef4520c-d073-d10e-746f-38ff46f01e67"
-                                    style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                                    role="listitem" class="blog-collection-item w-dyn-item">
-                                    <div class="blog-card-text-wrap">
-                                        <div class="blog-card-label warning">
-                                            <div class="label white-label">BOOKING ID #376</div>
-                                        </div>
-                                        <a href="#" class="card-text-link">Table
-                                            Tennis Venue 1
-                                        </a>
-                                        <p>137 Sunset Wy, #03-05, Singapore 597159</p>
-                                        <p><i class="fa-regular fa-calendar primary-color-span"></i> <strong>28 October
-                                                2026,
-                                                Wednesday</strong></p>
-                                        <p><i class="fa-regular fa-clock primary-color-span"></i> <strong>10:00 AM -
-                                                12:00 PM (2
-                                                Hours)</strong></p>
-                                        <div class="price-flex" style="margin-top:20px;">
-                                            <span style="font-size:22px;"
-                                                class="warning"><strong>PENDING</strong></span>
-                                            <span style="font-size:22px;" class="warning"><strong>SGD
-                                                    32.00</strong></span>
-                                        </div>
-                                        <div class="price-flex" style="margin:0;justify-content: space-between;">
-                                            <a href="#" class="primary-button warning-button w-button">Retry Payment</a>
-                                            <a href="#" class="primary-button full-width-mobile w-button">View
-                                                Details</a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div data-w-id="aef4520c-d073-d10e-746f-38ff46f01e67"
-                                    style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                                    role="listitem" class="blog-collection-item w-dyn-item">
-                                    <div class="blog-card-text-wrap">
-                                        <div class="blog-card-label error">
-                                            <div class="label white-label">BOOKING ID #375</div>
-                                        </div>
-                                        <a href="#" class="card-text-link">Table
-                                            Tennis Venue 1
-                                        </a>
-                                        <p>137 Sunset Wy, #03-05, Singapore 597159</p>
-                                        <p><i class="fa-regular fa-calendar primary-color-span"></i> <strong>28 October
-                                                2026,
-                                                Wednesday</strong></p>
-                                        <p><i class="fa-regular fa-clock primary-color-span"></i> <strong>10:00 AM -
-                                                12:00 PM (2
-                                                Hours)</strong></p>
-                                        <div class="price-flex" style="margin-top:20px;">
-                                            <span style="font-size:22px;"
-                                                class="error"><strong>CANCELLED</strong></span>
-                                            <span style="font-size:22px;" class="error"><strong>SGD
-                                                    32.00</strong></span>
-                                        </div>
-                                        <a href="#" class="primary-button full-width-mobile w-button">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div role="navigation" aria-label="List" class="w-pagination-wrapper"></div>
-                        </div>
-                    </div>
-                    <div data-w-tab="Tab 2" class="w-tab-pane" id="w-tabs-0-data-w-pane-1" role="tabpanel"
-                        aria-labelledby="w-tabs-0-data-w-tab-1">
-                        <div class="center-title-wrapper home-3-gray-section">
-
-                            <div data-w-id="830809ec-ccdb-9f8b-9ba4-d434df81149e"
-                                style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                                class="center-title-wrap">
-                                <h2>No pending bookings</h2>
-                                <p data-w-id="830809ec-ccdb-9f8b-9ba4-d434df8114a3"
-                                    style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                                    class="paragraph-large home-3-values">Explore and book exciting sport sessions at
-                                    various venues.</p>
-                                <div data-w-id="c3ee37b7-9cf0-b128-49c5-10c421b0357b"
-                                    style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                                    class="tm20-button-wrapper"><a href="booking.html"
-                                        class="primary-button w-button">Book Now</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div data-w-tab="Tab 3" class="w-tab-pane" id="w-tabs-0-data-w-pane-2" role="tabpanel"
-                        aria-labelledby="w-tabs-0-data-w-tab-2">
-                        <div class="center-title-wrapper home-3-gray-section">
-
-                            <div data-w-id="830809ec-ccdb-9f8b-9ba4-d434df81149e"
-                                style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                                class="center-title-wrap">
-                                <h2>No Confirmed bookings</h2>
-                                <p data-w-id="830809ec-ccdb-9f8b-9ba4-d434df8114a3"
-                                    style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                                    class="paragraph-large home-3-values">Explore and book exciting sport sessions at
-                                    various venues.</p>
-                                <div data-w-id="c3ee37b7-9cf0-b128-49c5-10c421b0357b"
-                                    style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                                    class="tm20-button-wrapper"><a href="booking.html"
-                                        class="primary-button w-button">Book Now</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div data-w-tab="Tab 4" class="w-tab-pane" id="w-tabs-0-data-w-pane-3" role="tabpanel"
-                        aria-labelledby="w-tabs-0-data-w-tab-3">
-                        <div class="center-title-wrapper home-3-gray-section">
-
-                            <div data-w-id="830809ec-ccdb-9f8b-9ba4-d434df81149e"
-                                style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                                class="center-title-wrap">
-                                <h2>No Cancelled bookings</h2>
-                                <p data-w-id="830809ec-ccdb-9f8b-9ba4-d434df8114a3"
-                                    style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                                    class="paragraph-large home-3-values">Explore and book exciting sport sessions at
-                                    various venues.</p>
-                                <div data-w-id="c3ee37b7-9cf0-b128-49c5-10c421b0357b"
-                                    style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                                    class="tm20-button-wrapper"><a href="booking.html"
-                                        class="primary-button w-button">Book Now</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
+    <!-- MAIN CONTAINER -->
+    <div class="main-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <h3>Menu</h3>
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="#" class="menu-link active" data-section="bookings">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>My Bookings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="menu-link" data-section="profile">
+                        <i class="fas fa-user"></i>
+                        <span>Edit Profile</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="menu-link" data-section="membership">
+                        <i class="fas fa-star"></i>
+                        <span>Buy Membership</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- CONTENT AREA -->
+        <main class="content">
+
+
+            <!-- MY BOOKINGS SECTION -->
+            <section class="content-section active" id="bookings">
+                <div class="section-title">
+                    <i class="fas fa-calendar-check"></i>
+                    My Bookings
+                </div>
+                <p class="section-subtitle">View and manage all your table tennis session bookings</p>
+
+                <div class="tabs">
+                    <button class="tab active" data-filter="all">All</button>
+                    <button class="tab" data-filter="confirmed">Confirmed</button>
+                    <button class="tab" data-filter="pending">Pending</button>
+                    <button class="tab" data-filter="cancelled">Cancelled</button>
+                </div>
+
+                <div id="bookingsList">
+                    <!-- Booking Card - Confirmed -->
+                    <div class="booking-card" data-status="confirmed">
+                        <div class="booking-header">
+                            <div>
+                                <div class="booking-title">Table Tennis Venue 1</div>
+                                <div class="booking-venue">137 Sunset Wy, #03-05, Singapore 597159</div>
+                            </div>
+                            <span class="booking-badge confirmed">Confirmed</span>
+                        </div>
+                        <div class="booking-details">
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>28 October 2026, Wednesday</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>12:00 PM - 2:00 PM (2 Hours)</span>
+                            </div>
+                        </div>
+                        <div class="booking-footer">
+                            <div class="booking-price">SGD 32.00</div>
+                            <div class="booking-actions">
+                                <button class="btn btn-primary btn-sm">View Details</button>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Booking Card - Pending -->
+                    <div class="booking-card" data-status="pending">
+                        <div class="booking-header">
+                            <div>
+                                <div class="booking-title">Table Tennis Venue 2</div>
+                                <div class="booking-venue">137 Sunset Wy, #03-05, Singapore 597159</div>
+                            </div>
+                            <span class="booking-badge pending">Pending</span>
+                        </div>
+                        <div class="booking-details">
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>30 October 2026, Friday</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>10:00 AM - 12:00 PM (2 Hours)</span>
+                            </div>
+                        </div>
+                        <div class="booking-footer">
+                            <div class="booking-price">SGD 32.00</div>
+                            <div class="booking-actions">
+                                <button class="btn btn-warning btn-sm">Complete Payment</button>
+                                <button class="btn btn-secondary btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Booking Card - Cancelled -->
+                    <div class="booking-card" data-status="cancelled">
+                        <div class="booking-header">
+                            <div>
+                                <div class="booking-title">Table Tennis Venue 3</div>
+                                <div class="booking-venue">137 Sunset Wy, #03-05, Singapore 597159</div>
+                            </div>
+                            <span class="booking-badge cancelled">Cancelled</span>
+                        </div>
+                        <div class="booking-details">
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>25 October 2026, Sunday</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>10:00 AM - 12:00 PM (2 Hours)</span>
+                            </div>
+                        </div>
+                        <div class="booking-footer">
+                            <div class="booking-price">SGD 32.00</div>
+                            <div class="booking-actions">
+                                <button class="btn btn-secondary btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="empty-state" id="emptyBookings" style="display: none;">
+                    <i class="fas fa-inbox"></i>
+                    <h3>No Bookings Found</h3>
+                    <p>You don't have any bookings matching the selected filter.</p>
+                    <a href="booking.html" class="btn btn-primary">Make Your First Booking</a>
+                </div>
+            </section>
+            <!-- EDIT PROFILE SECTION -->
+            <section class="content-section" id="profile">
+                <div class="section-title">
+                    <i class="fas fa-user"></i>
+                    Edit Profile
+                </div>
+                <p class="section-subtitle">Manage your account information and personal details</p>
+
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="profile-info">
+                        <h2 class="text-white">Eugene</h2>
+                        <p>eugeneong155@gmail.com</p>
+                        <p>Member since February 2026</p>
+                        <div class="profile-meta">
+                            <div class="meta-item">No Membership</div>
+                            <div class="meta-item">0 Bookings</div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="profile-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" value="Eugene" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" value="1995-06-15">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" value="eugene@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" value="+65 9876 5432" placeholder="+65 ">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <button type="button" class="btn btn-secondary">Cancel</button>
+                    </div>
+                </form>
+            </section>
+            <!-- BUY MEMBERSHIP SECTION -->
+            <section class="content-section" id="membership">
+                <div class="section-title">
+                    <i class="fas fa-star"></i>
+                    Buy Membership
+                </div>
+                <p class="section-subtitle">Upgrade your membership to enjoy exclusive benefits and discounts</p>
+
+                <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100"
+                    class="membership-tabs w-tabs">
+                    <div data-w-id="76e463d2-65f8-8af4-3128-1dd316b25b3b"
+                        style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                        class="membership-tabs-menu w-tab-menu" role="tablist"><a data-w-tab="Tab 1"
+                            class="membership-tab-link w-inline-block w-tab-link w--current" id="w-tabs-0-data-w-tab-0"
+                            href="#w-tabs-0-data-w-pane-0" role="tab" aria-controls="w-tabs-0-data-w-pane-0"
+                            aria-selected="true">
+                            <div>Monthly</div>
+                        </a><a data-w-tab="Tab 2" class="membership-tab-link w-inline-block w-tab-link" tabindex="-1"
+                            id="w-tabs-0-data-w-tab-1" href="#w-tabs-0-data-w-pane-1" role="tab"
+                            aria-controls="w-tabs-0-data-w-pane-1" aria-selected="false">
+                            <div>Yearly</div>
+                        </a></div>
+                    <div class="membership-tabs-content w-tab-content">
+                        <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active" id="w-tabs-0-data-w-pane-0"
+                            role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-0">
+                            <div class="pricing-plans-wrapper">
+                                <div data-w-id="76e463d2-65f8-8af4-3128-1dd316b25b45"
+                                    style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                                    class="pricing-plan-item">
+                                    <div class="pricing-card-top-wrap">
+                                        <div class="pricing-label">
+                                            <div>Basic Membership</div>
+                                        </div>
+                                        <div class="pricing-plan-price-wrapper">
+                                            <h6 class="pricing-price"><span
+                                                    class="pricing-plan-price">$29.99</span>/month</h6>
+                                        </div>
+                                        <p class="pricing-paragraph">Perfect for beginners &amp; casual fitness
+                                            enthusiasts</p>
+                                    </div>
+                                    <div class="pricing-card-bottom-wrap">
+                                        <div class="pricing-list-wrapper">
+                                            <div class="membership-list-item"><img loading="lazy"
+                                                    src="https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67d7e21798aa0f17f553776e_8ae32e618ebd1e637e75ca39b7a14028_Frame%20%2845%29.svg"
+                                                    alt="icon">
+                                                <div>Full access to gym &amp; training zones</div>
+                                            </div>
+                                            <div class="membership-list-item"><img loading="lazy"
+                                                    src="https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67d7e21798aa0f17f553776e_8ae32e618ebd1e637e75ca39b7a14028_Frame%20%2845%29.svg"
+                                                    alt="icon">
+                                                <div>Standard group fitness classes</div>
+                                            </div>
+                                            <div class="membership-list-item"><img loading="lazy"
+                                                    src="https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67d7e21798aa0f17f553776e_8ae32e618ebd1e637e75ca39b7a14028_Frame%20%2845%29.svg"
+                                                    alt="icon">
+                                                <div>Locker room &amp; shower facilities</div>
+                                            </div>
+                                            <div class="membership-list-item"><img loading="lazy"
+                                                    src="https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67d7e21798aa0f17f553776e_8ae32e618ebd1e637e75ca39b7a14028_Frame%20%2845%29.svg"
+                                                    alt="icon">
+                                                <div>Member-exclusive fitness tips &amp; guides</div>
+                                            </div>
+                                        </div><a href="#" class="primary-button full-width-mobile">Join
+                                            now</a>
+                                    </div>
+                                </div>
+                                <div data-w-id="76e463d2-65f8-8af4-3128-1dd316b25b65"
+                                    style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                                    class="pricing-plan-item">
+                                    <div class="pricing-card-top-wrap">
+                                        <div class="pricing-label">
+                                            <div>Premium Membership</div>
+                                        </div>
+                                        <div class="pricing-plan-price-wrapper">
+                                            <h6 class="pricing-price"><span
+                                                    class="pricing-plan-price">$49.99</span>/month</h6>
+                                        </div>
+                                        <p class="pricing-paragraph">For those looking to take their training to the
+                                            next level</p>
+                                    </div>
+                                    <div class="pricing-card-bottom-wrap">
+                                        <div class="pricing-list-wrapper">
+                                            <div class="membership-list-item"><img loading="lazy"
+                                                    src="https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67d7e21798aa0f17f553776e_8ae32e618ebd1e637e75ca39b7a14028_Frame%20%2845%29.svg"
+                                                    alt="icon">
+                                                <div>Everything in Basic, plus:</div>
+                                            </div>
+                                            <div class="membership-list-item"><img loading="lazy"
+                                                    src="https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67d7e21798aa0f17f553776e_8ae32e618ebd1e637e75ca39b7a14028_Frame%20%2845%29.svg"
+                                                    alt="icon">
+                                                <div>Access to specialized training areas</div>
+                                            </div>
+                                            <div class="membership-list-item"><img loading="lazy"
+                                                    src="https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67d7e21798aa0f17f553776e_8ae32e618ebd1e637e75ca39b7a14028_Frame%20%2845%29.svg"
+                                                    alt="icon">
+                                                <div>Advanced group fitness programs</div>
+                                            </div>
+                                            <div class="membership-list-item"><img loading="lazy"
+                                                    src="https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67d7e21798aa0f17f553776e_8ae32e618ebd1e637e75ca39b7a14028_Frame%20%2845%29.svg"
+                                                    alt="icon">
+                                                <div>Discounts on personal training</div>
+                                            </div>
+                                        </div><a href="#" class="primary-button full-width-mobile">Join
+                                            now</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div data-w-tab="Tab 2" class="w-tab-pane" id="w-tabs-0-data-w-pane-1" role="tabpanel"
+                            aria-labelledby="w-tabs-0-data-w-tab-1">
+                            <div class="pricing-plans-wrapper">
+                                <div class="pricing-plan-item">
+                                    <div class="pricing-card-top-wrap">
+                                        <div class="pricing-label">
+                                            <div>Basic Membership</div>
+                                        </div>
+                                        <div class="pricing-plan-price-wrapper">
+                                            <h6 class="pricing-price"><span
+                                                    class="pricing-plan-price">$99.99</span>/year</h6>
+                                        </div>
+                                        <p class="pricing-paragraph">Perfect for beginners &amp; casual fitness
+                                            enthusiasts</p>
+                                    </div>
+                                    <div class="pricing-card-bottom-wrap">
+                                        <div class="pricing-list-wrapper">
+                                            <div class="membership-list-item"><img loading="lazy"
+                                                    src="https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67d7e21798aa0f17f553776e_8ae32e618ebd1e637e75ca39b7a14028_Frame%20%2845%29.svg"
+                                                    alt="icon">
+                                                <div>Full access to gym &amp; training zones</div>
+                                            </div>
+                                            <div class="membership-list-item"><img loading="lazy"
+                                                    src="https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67d7e21798aa0f17f553776e_8ae32e618ebd1e637e75ca39b7a14028_Frame%20%2845%29.svg"
+                                                    alt="icon">
+                                                <div>Standard group fitness classes</div>
+                                            </div>
+                                            <div class="membership-list-item"><img loading="lazy"
+                                                    src="https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67d7e21798aa0f17f553776e_8ae32e618ebd1e637e75ca39b7a14028_Frame%20%2845%29.svg"
+                                                    alt="icon">
+                                                <div>Locker room &amp; shower facilities</div>
+                                            </div>
+                                            <div class="membership-list-item"><img loading="lazy"
+                                                    src="https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67d7e21798aa0f17f553776e_8ae32e618ebd1e637e75ca39b7a14028_Frame%20%2845%29.svg"
+                                                    alt="icon">
+                                                <div>Member-exclusive fitness tips &amp; guides</div>
+                                            </div>
+                                        </div><a href="/contact-us" class="primary-button full-width-mobile">Join
+                                            now</a>
+                                    </div>
+                                </div>
+                                <div class="pricing-plan-item">
+                                    <div class="pricing-card-top-wrap">
+                                        <div class="pricing-label">
+                                            <div>Premium Membership</div>
+                                        </div>
+                                        <div class="pricing-plan-price-wrapper">
+                                            <h6 class="pricing-price"><span
+                                                    class="pricing-plan-price">$199.99</span>/year</h6>
+                                        </div>
+                                        <p class="pricing-paragraph">For those looking to take their training to the
+                                            next level</p>
+                                    </div>
+                                    <div class="pricing-card-bottom-wrap">
+                                        <div class="pricing-list-wrapper">
+                                            <div class="membership-list-item"><img loading="lazy"
+                                                    src="https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67d7e21798aa0f17f553776e_8ae32e618ebd1e637e75ca39b7a14028_Frame%20%2845%29.svg"
+                                                    alt="icon">
+                                                <div>Everything in Basic, plus:</div>
+                                            </div>
+                                            <div class="membership-list-item"><img loading="lazy"
+                                                    src="https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67d7e21798aa0f17f553776e_8ae32e618ebd1e637e75ca39b7a14028_Frame%20%2845%29.svg"
+                                                    alt="icon">
+                                                <div>Access to specialized training areas</div>
+                                            </div>
+                                            <div class="membership-list-item"><img loading="lazy"
+                                                    src="https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67d7e21798aa0f17f553776e_8ae32e618ebd1e637e75ca39b7a14028_Frame%20%2845%29.svg"
+                                                    alt="icon">
+                                                <div>Advanced group fitness programs</div>
+                                            </div>
+                                            <div class="membership-list-item"><img loading="lazy"
+                                                    src="https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67d7e21798aa0f17f553776e_8ae32e618ebd1e637e75ca39b7a14028_Frame%20%2845%29.svg"
+                                                    alt="icon">
+                                                <div>Discounts on personal training</div>
+                                            </div>
+                                        </div><a href="/contact-us" class="primary-button full-width-mobile">Join
+                                            now</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
     <div class="footer">
         <div class="base-container w-container">
             <div class="footer-top-wrap">
@@ -371,6 +1311,80 @@
     <script src="js/schunk4.js" type="text/javascript"></script>
     <script src="js/schunk5.js" type="text/javascript"></script>
     <script src="js/schunk6.js" type="text/javascript"></script>
+
+    <script>
+        // Mobile Menu Toggle for sidebar
+        const sidebar = document.getElementById('sidebar');
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.menu-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (sidebar) sidebar.classList.remove('mobile-open');
+
+                const section = link.dataset.section;
+                showSection(section);
+
+                // Update active menu link
+                document.querySelectorAll('.menu-link').forEach(l => {
+                    l.classList.remove('active');
+                });
+                link.classList.add('active');
+            });
+        });
+
+        // Show/Hide Sections
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Booking Filter
+        document.querySelectorAll('[data-filter]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('[data-filter]').forEach(b => {
+                    b.classList.remove('active');
+                });
+                btn.classList.add('active');
+                filterBookings(filter);
+            });
+        });
+
+        function filterBookings(filter) {
+            const bookings = document.querySelectorAll('[data-status]');
+            let visibleCount = 0;
+
+            bookings.forEach(booking => {
+                if (filter === 'all' || booking.dataset.status === filter) {
+                    booking.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    booking.style.display = 'none';
+                }
+            });
+
+            const emptyState = document.getElementById('emptyBookings');
+            if (visibleCount === 0) {
+                emptyState.style.display = 'block';
+            } else {
+                emptyState.style.display = 'none';
+            }
+        }
+
+        // Membership Upgrade
+        function upgrade(plan) {
+            alert(`Upgrading to ${plan} membership! Redirecting to payment...`);
+        }
+
+        // Form Submit
+        document.querySelector('.profile-form')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Profile updated successfully!');
+        });
+    </script>
 </body>
 
 </html>
