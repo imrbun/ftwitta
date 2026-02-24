@@ -3629,6 +3629,7 @@ blockquote {
     line-height: 1.1em;
     transition: all .35s;
     display: flex;
+    margin-top: 10px;
 }
 
 .primary-button:hover {
@@ -3663,6 +3664,15 @@ blockquote {
 .primary-button.black-button:hover {
     background-color: var(--primary);
     color: var(--white);
+}
+
+.primary-button.warning-button {
+    background-color: #d3a900;
+}
+
+.primary-button.warning-button:hover {
+    background-color: var(--primary-light);
+    color: var(--primary);
 }
 
 .primary-button.cta-button {
@@ -4201,6 +4211,7 @@ blockquote {
 
 .footer {
     align-items: flex-start;
+    padding-top: 24px;
     padding-bottom: 24px;
 }
 
@@ -4484,7 +4495,7 @@ blockquote {
 }
 
 .contacts-icon {
-    color: var(--primary);
+    color: var(--white);
     margin-top: 0;
     margin-bottom: 0;
     margin-right: 15px;
@@ -4532,6 +4543,20 @@ blockquote {
     font-size: 16px;
     line-height: 1em;
     transition: all .2s;
+    margin-bottom: 20px;
+}
+
+select.contacts-input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    padding-right: 52px;
+
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9L12 15L18 9' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 16px;
 }
 
 .contacts-input:focus {
@@ -6106,6 +6131,8 @@ blockquote {
 .label.white-label {
     color: var(--white);
 }
+
+
 
 .grid-button-wrapper {
     justify-content: flex-end;
@@ -8016,12 +8043,29 @@ blockquote {
     display: flex;
 }
 
-.events-3-banner-section {
-    background-image: linear-gradient(#00000080, #00000080), url("https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67e3c8795e5b2611d63855b3_cc3889eb940be1a465529b5fe3aa7731_2149731293%20(1).webp");
+.dashboard-banner-section {
+    background-image: linear-gradient(#00000080, #00000080), url("../images/pingpong.png");
     background-position: 0 0, 50% 100%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
-    padding-top: 260px;
+    padding-top: 150px;
+    padding-bottom: 80px;
+}
+
+.dashboard-banner {
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    flex-flow: column;
+    width: 100%;
+    display: flex;
+}
+
+.events-3-banner-section {
+    background-image: linear-gradient(#00000080, #00000080), url("../images/court2.png");
+    background-position: 0 0, 50% 100%;
+    background-repeat: repeat, no-repeat;
+    background-size: auto, cover;
+    padding-top: 150px;
     padding-bottom: 80px;
 }
 
@@ -8029,7 +8073,7 @@ blockquote {
     grid-column-gap: 5px;
     grid-row-gap: 5px;
     flex-flow: column;
-    width: 55%;
+    width: 100%;
     display: flex;
 }
 
@@ -8053,7 +8097,7 @@ blockquote {
 .events-3-link-block {
     border-radius: 10px 10px 0 0;
     width: 100%;
-    height: 220px;
+    height: 110px;
     overflow: hidden;
 }
 
@@ -8582,7 +8626,7 @@ blockquote {
 }
 
 .blog-card-text-wrap {
-    background-color: var(--light-gray);
+    background-color: white;
     border-radius: 10px 10px 0 0;
     flex-flow: column;
     flex: 1;
@@ -8603,6 +8647,22 @@ blockquote {
     position: absolute;
     top: -13px;
     left: 20px;
+}
+
+.blog-card-label.warning {
+    background-color: #d3a900;
+}
+
+.warning {
+    color: #d3a900;
+}
+
+.blog-card-label.error {
+    background-color: rgb(196, 0, 0);
+}
+
+.error {
+    color: rgb(196, 0, 0);
 }
 
 .author-text-wrap {
@@ -8778,9 +8838,20 @@ blockquote {
 }
 
 .contacts-banner-section {
-    background-color: var(--light-gray);
-    padding-top: 88px;
-    padding-bottom: 20px;
+    background-image: url("../images/pingpong.png");
+    background-position: 100%;
+    background-size: cover;
+    padding-top: 216px;
+    padding-bottom: 60px;
+    position: relative;
+}
+
+@media screen and (max-width: 479px) {
+    .contacts-banner-section {
+
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
 }
 
 .contacts-page-banner-text-wrap {
@@ -8793,7 +8864,7 @@ blockquote {
 }
 
 .contact-link {
-    color: var(--black);
+    color: var(--white);
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 600;
@@ -9922,9 +9993,7 @@ blockquote {
         padding-bottom: 120px;
     }
 
-    .events-3-banner {
-        width: 50%;
-    }
+
 
     .card-text-link {
         text-align: left;
@@ -10178,13 +10247,7 @@ blockquote {
         object-position: 50% 25%;
     }
 
-    .events-3-banner-section {
-        padding-top: 320px;
-    }
 
-    .events-3-banner {
-        width: 55%;
-    }
 
     .event-details-card {
         max-width: 40%;
@@ -10432,12 +10495,9 @@ blockquote {
 
     .events-3-banner-section {
         background-position: 0 0, 50% 75%;
-        padding-top: 400px;
+
     }
 
-    .events-3-banner {
-        width: 51%;
-    }
 
     .event-page-image {
         background-position: 50% 25%;
@@ -11652,7 +11712,7 @@ blockquote {
     }
 
     .events-3-banner-section {
-        background-image: linear-gradient(#00000080, #00000080), url("https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67e3c8795e5b2611d63855b3_cc3889eb940be1a465529b5fe3aa7731_2149731293%20(1).webp");
+        background-image: linear-gradient(#00000080, #00000080), url("../images/court2.png");
         background-size: auto, auto 120%;
     }
 
@@ -12699,7 +12759,7 @@ blockquote {
     }
 
     .events-3-banner-section {
-        background-image: linear-gradient(#00000080, #00000080), url("https://cdn.prod.website-files.com/67d3e78113168635558f70d0/67e3c8795e5b2611d63855b3_cc3889eb940be1a465529b5fe3aa7731_2149731293%20(1).webp");
+        background-image: linear-gradient(#00000080, #00000080), url("../images/court2.png");
         background-position: 0 0, 50% 100%;
         background-size: auto, auto 130%;
         padding-top: 220px;
@@ -13832,4 +13892,21 @@ blockquote {
     font-weight: 400;
     font-style: normal;
     font-display: swap;
+}
+
+.price-flex {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0;
+}
+
+.price-flex span:first-child {
+    flex: 1 1 auto;
+    word-break: break-word;
+}
+
+.price-flex span:last-child {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    margin-left: 10px;
 }
